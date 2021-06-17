@@ -1,0 +1,205 @@
+{% extends "base.html" %}
+
+{% block title %}
+    {{ title }}
+{% endblock title %}
+
+{% block content %}    
+    <div class="row mt-4">
+        <div class="col-md-8 offset-md-2 form-bg-custom">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif%}
+            {% endwith %}
+            <form method="POST" action="">
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <div class="form-group">
+                                {{ form.age.label(class="form-control-label text-white-primary") }}
+                                {% if form.age.errors%}
+                                    {{ form.age(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.age.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.age(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.chest_pain.label(class="form-control-label text-white-primary") }}
+                                {% if form.chest_pain.errors%}
+                                    {{ form.chest_pain(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.chest_pain.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.chest_pain(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.sereum_cholestoral.label(class="form-control-label text-white-primary") }}
+                                {% if form.sereum_cholestoral.errors%}
+                                    {{ form.sereum_cholestoral(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.sereum_cholestoral.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.sereum_cholestoral(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.resting_ecg.label(class="form-control-label text-white-primary") }}
+                                {% if form.resting_ecg.errors%}
+                                    {{ form.resting_ecg(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.resting_ecg.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.resting_ecg(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.exercise_induced_angina.label(class="form-control-label text-white-primary") }}
+                                {% if form.exercise_induced_angina.errors%}
+                                    {{ form.exercise_induced_angina(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.exercise_induced_angina.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.exercise_induced_angina(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.slope.label(class="form-control-label text-white-primary") }}
+                                {% if form.slope.errors%}
+                                    {{ form.slope(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.slope.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.slope(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.thal.label(class="form-control-label text-white-primary") }}
+                                {% if form.thal.errors%}
+                                    {{ form.thal(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.thal.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.thal(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="col-md-6">
+                        <fieldset class="form-group">
+                            <div class="form-group">
+                                {{ form.gender.label(class="form-control-label text-white-primary") }}
+                                {% if form.gender.errors%}
+                                    {{ form.gender(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.gender.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.gender(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.resting_bp.label(class="form-control-label text-white-primary") }}
+                                {% if form.resting_bp.errors%}
+                                    {{ form.resting_bp(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.resting_bp.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.resting_bp(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.fasting_blood_sugar.label(class="form-control-label text-white-primary") }}
+                                {% if form.fasting_blood_sugar.errors%}
+                                    {{ form.fasting_blood_sugar(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.fasting_blood_sugar.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.fasting_blood_sugar(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.max_heart_rate.label(class="form-control-label text-white-primary") }}
+                                {% if form.max_heart_rate.errors%}
+                                    {{ form.max_heart_rate(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.max_heart_rate.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.max_heart_rate(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.oldpeak.label(class="form-control-label text-white-primary") }}
+                                {% if form.oldpeak.errors%}
+                                    {{ form.oldpeak(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.oldpeak.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.oldpeak(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                            <div class="form-group">
+                                {{ form.ca.label(class="form-control-label text-white-primary") }}
+                                {% if form.ca.errors%}
+                                    {{ form.ca(class="form-control form-control-lg is-invalid") }}
+                                    <div class="invalid-feedback">
+                                        {% for error in form.ca.errors %}
+                                            <small>{{ error }}</small>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    {{ form.ca(class="form-control form-control-lg") }}
+                                {% endif %}
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="form-group">
+                    {{ form.check(class="btn")}}
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock content%}
